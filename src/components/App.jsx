@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './github/Profile.jsx'
+import Search from './github/Search.jsx'
 import dotenv from 'dotenv';
 dotenv.load();
 // require('dotenv').config();
@@ -12,7 +13,7 @@ class App extends Component{
       username: 'somtida',
       userData: [],
       userRepos: [],
-      perPage: 5
+      perPage: 10
     }
   }
   // Get user data from github
@@ -50,9 +51,14 @@ class App extends Component{
     this.getUserData();
     this.getUserRepos();
   }
+  handleFormSubmit(username) {
+    alert(username)
+  }
   render(){
     return(
       <div>
+        <Search onFormSubmit={this.handleFormSubmit.bind(this)}/>
+        <hr/>
         <Profile {...this.state}/>
       </div>
     )
