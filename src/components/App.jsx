@@ -52,7 +52,11 @@ class App extends Component{
     this.getUserRepos();
   }
   handleFormSubmit(username) {
-    alert(username)
+    // alert(username)
+    this.setState({username: username}, function(){
+      this.getUserData();
+      this.getUserRepos();
+    })
   }
   render(){
     return(
