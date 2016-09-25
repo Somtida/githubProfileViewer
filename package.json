@@ -15,6 +15,7 @@
     "webpack": "1.12.*"
   },
   "dependencies": {
+    "dotenv": "^2.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }
